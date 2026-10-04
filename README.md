@@ -21,4 +21,27 @@ Trigger and content-warning data will come from existing online databases (to be
 
 ## Status
 
-Early planning. No app code yet.
+Early prototype. The screens work end to end with placeholder data: a fictional movie list and a made-up trigger catalogue. Real search and trigger data will come through a small backend proxy, so no API keys live in the app.
+
+## Development
+
+The app is built with [Expo](https://expo.dev) (React Native, TypeScript, Expo Router).
+
+```bash
+npm install
+npx expo start
+```
+
+Then press `i` for the iOS simulator or `a` for the Android emulator. Expo Go is installed on the device automatically.
+
+```bash
+npm run typecheck
+npm run lint
+```
+
+Code layout:
+
+- `src/app/` screens (Expo Router: every file is a route)
+- `src/data/` placeholder trigger list and mock movies
+- `src/lib/verdict.ts` the scoring that turns your sensitivities and a film's content into a verdict
+- `src/state/` your saved trigger choices, stored on the device
